@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Artist Submissions | Keysounds Entertainment Records</title>
+
+    <meta name="description"
+          content="Submit your music to Keysounds Entertainment Records.">
+
+    <meta name="theme-color"
+          content="#080a10">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #f5b52c;
+            --gold-light: #ffd86b;
+            --dark: #080a10;
+            --dark-two: #0d1017;
+            --muted: #a9adb7;
+            --border: rgba(255,255,255,0.10);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080a10;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(5,7,12,.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo .sounds {
+            color: var(--gold);
+        }
+
+        .logo small {
+            display: block;
+            color: #777;
+            font-size: 8px;
+            letter-spacing: 3px;
+            margin-top: -3px;
+        }
+
+        .back-link {
+            color: #c3c3c3;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+        }
+
+
+        /* HERO */
+
+        .submission-hero {
+            min-height: 570px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 150px 7% 90px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(245,181,44,.10),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at center,
+                    #171c28,
+                    #080a10 65%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .label {
+            color: var(--gold);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 5px;
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(45px,7vw,80px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .submission-hero p {
+            max-width: 680px;
+            margin: auto;
+
+            color: #b0b4bd;
+            font-size: 18px;
+        }
+
+
+        /* FORM SECTION */
+
+        .form-section {
+            padding: 100px 7%;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .intro {
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            font-size: 36px;
+            margin-bottom: 13px;
+        }
+
+        .intro p {
+            color: var(--muted);
+        }
+
+        .notice {
+            margin-top: 25px;
+
+            padding: 20px 23px;
+
+            background: #0d1017;
+
+            border-left: 3px solid var(--gold);
+
+            color: #aaaeb7;
+
+            font-size: 14px;
+        }
+
+
+        /* FORM */
+
+        form {
+            background: #0d1017;
+
+            border: 1px solid var(--border);
+
+            padding: 45px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #d5d7dc;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .required {
+            color: var(--gold);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            background: #080a10;
+
+            border: 1px solid #292e38;
+
+            color: #ffffff;
+
+            font-family: inherit;
+            font-size: 14px;
+
+            outline: none;
+
+            transition: .3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold);
+        }
+
+        textarea {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .field-note {
+            display: block;
+            margin-top: 7px;
+            color: #737984;
+            font-size: 12px;
+        }
+
+
+        /* SUBMIT BUTTON */
+
+        .submit-button {
+            width: 100%;
+
+            border: 1px solid var(--gold);
+
+            background: var(--gold);
+
+            color: #080808;
+
+            padding: 16px 25px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .submit-button:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+
+        /* IMPORTANT: TEMPORARY MESSAGE */
+
+        .form-status {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            border: 1px solid rgba(245,181,44,.35);
+
+            background: rgba(245,181,44,.06);
+
+            color: #d7d9de;
+
+            font-size: 14px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 7%;
+
+            border-top: 1px solid var(--border);
+
+            background: #040509;
+
+            text-align: center;
+
+            color: #626771;
+
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .submission-hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .form-section {
+                padding: 75px 5%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            form {
+                padding: 28px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html"
+           class="logo">
+
+            KEY<span class="sounds">SOUNDS</span>
+
+            <small>
+                ENTERTAINMENT RECORDS
+            </small>
+
+        </a>
+
+
+        <a href="index.html"
+           class="back-link">
+
+            ← Back to Keysounds
+
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="submission-hero">
+
+        <div class="hero-content">
+
+            <div class="label">
+                Keysounds A&R
+            </div>
+
+            <h1>
+                Artist Submissions
+            </h1>
+
+            <p>
+
+                Think your sound belongs at Keysounds?
+                Introduce yourself, share your music and
+                let us hear what you're creating.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORM -->
+
+    <section class="form-section">
+
+        <div class="form-container">
+
+
+            <div class="intro">
+
+                <div class="label">
+                    Submit Your Music
+                </div>
+
+                <h2>
+                    Tell us about yourself.
+                </h2>
+
+                <p>
+
+                    Complete the form below and provide a link
+                    where the Keysounds team can listen to your music.
+
+                </p>
+
+
+                <div class="notice">
+
+                    Please submit links to your music rather than
+                    uploading large audio files. You can use YouTube,
+                    Audiomack, SoundCloud, Spotify, Google Drive or
+                    another accessible music link.
+
+                </div>
+
+            </div>
+
+
+            <!--
+                IMPORTANT:
+
+                This form currently displays correctly but is not
+                connected to a form-processing service yet.
+
+                Once the official Keysounds submission email is ready,
+                connect this form to a service/backend.
+            -->
+
+            <form id="artistForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="fullName"
+                               name="fullName"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="artistName">
+                            Artist / Stage Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="artistName"
+                               name="artistName"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone / WhatsApp Number
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+                            Country / City
+                        </label>
+
+                        <input type="text"
+                               id="location"
+                               name="location">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="genre">
+                            Primary Genre
+                            <span class="required">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="genre"
+                               name="genre"
+                               placeholder="e.g. Hip-Hop, R&B, Afrobeat"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="experience">
+                            How long have you been making music?
+                        </label>
+
+                        <input type="text"
+                               id="experience"
+                               name="experience"
+                               placeholder="e.g. 2 years">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="instagram">
+                            Instagram
+                        </label>
+
+                        <input type="url"
+                               id="instagram"
+                               name="instagram"
+                               placeholder="Profile link">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="facebook">
+                            Facebook
+                        </label>
+
+                        <input type="url"
+                               id="facebook"
+                               name="facebook"
+                               placeholder="Profile or page link">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="youtube">
+                            YouTube
+                        </label>
+
+                        <input type="url"
+                               id="youtube"
+                               name="youtube"
+                               placeholder="Channel link">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tiktok">
+                            TikTok
+                        </label>
+
+                        <input type="url"
+                               id="tiktok"
+                               name="tiktok"
+                               placeholder="Profile link">
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="musicLink">
+
+                            Link to Your Music
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input type="url"
+                               id="musicLink"
+                               name="musicLink"
+                               placeholder="YouTube, Audiomack, SoundCloud, Spotify, Google Drive..."
+                               required>
+
+                        <span class="field-note">
+
+                            Make sure the link can be opened without
+                            requesting private access.
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="bio">
+
+                            Tell Us About Yourself
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <textarea id="bio"
+                                  name="bio"
+                                  placeholder="Give us a short introduction to you and your music."
+                                  required></textarea>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="whyKeysounds">
+
+                            Why would you like to work with Keysounds?
+
+                        </label>
+
+                        <textarea id="whyKeysounds"
+                                  name="whyKeysounds"
+                                  placeholder="Tell us what you're looking for and why Keysounds interests you."></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <button type="submit"
+                        class="submit-button">
+
+                    SUBMIT TO KEYSOUNDS
+
+                </button>
+
+
+                <div class="form-status"
+                     id="formStatus">
+
+                    The submission system is being prepared.
+                    Please check back when Keysounds officially
+                    opens artist submissions.
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026
+        <span>Keysounds Entertainment Records</span>.
+        All rights reserved.
+
+    </footer>
+
+
+    <script>
+
+        /*
+            TEMPORARY SUBMISSION HANDLER
+
+            Prevents the browser from pretending the application
+            was successfully submitted while no backend is connected.
+
+            Replace this when the official submission system is ready.
+        */
+
+        const artistForm = document.getElementById("artistForm");
+        const formStatus = document.getElementById("formStatus");
+
+        artistForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            formStatus.style.display = "block";
+
+            formStatus.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
