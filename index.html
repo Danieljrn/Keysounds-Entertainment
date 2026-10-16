@@ -1115,6 +1115,28 @@
             }
         }
 
+
+        /* MUSIC STORE — additions preserve existing website styles */
+        .music-store { background:linear-gradient(160deg,#10141e,#080a10 70%); }
+        .store-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:start;}
+        .store-player {border:1px solid var(--border);padding:16px;background:#151923;border-radius:14px;}
+        .store-player iframe {width:100%;border:0;border-radius:10px;display:block;min-height:352px;}
+        .store-details {border:1px solid var(--border);padding:32px;background:#0d1017;border-radius:14px;}
+        .store-tag {color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;}
+        .store-details h3 {font-size:clamp(28px,4vw,42px);line-height:1.15;margin:12px 0;}
+        .store-details p {color:#b8bbc3;margin-bottom:22px;}
+        .store-options {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0;}
+        .store-option {border:1px solid #373b44;border-radius:9px;padding:17px;background:#141822;}
+        .store-option strong {display:block;color:#fff;margin-bottom:6px;}
+        .store-option span {font-size:13px;color:#a9adb7;}
+        .store-soon {display:inline-block;padding:13px 22px;background:#303037;color:#f0d38c;border:1px solid #65552f;border-radius:6px;font-size:13px;font-weight:700;cursor:not-allowed;}
+        .store-payment {margin-top:24px;padding-top:18px;border-top:1px solid var(--border);font-size:13px;color:#a9adb7;}
+        .store-note {margin-top:22px;color:#a9adb7;font-size:14px;}
+        .store-details a.store-stream {display:inline-block;margin-left:14px;color:var(--gold);font-size:14px;text-decoration:underline;text-underline-offset:4px;}
+        .team-info strong {color:#eceef3;}
+        @media(max-width:800px){.store-layout{grid-template-columns:1fr;}.store-details{padding:24px;}}
+        @media(max-width:480px){.store-options{grid-template-columns:1fr;}.store-details a.store-stream{display:block;margin:18px 0 0;}}
+
     </style>
 
 </head>
@@ -1152,6 +1174,7 @@
             <li><a href="#team">Team</a></li>
 
             <li><a href="#artists">Artists</a></li>
+            <li><a href="music-store.html">Music Store</a></li>
 
             <li><a href="#contact">Contact</a></li>
 
@@ -1199,6 +1222,8 @@
                    class="button">
                     Discover Keysounds
                 </a>
+
+                <a href="music-store.html" class="button secondary">Explore Music Store</a>
 
                 <a href="#contact"
                    class="button secondary">
@@ -1574,9 +1599,9 @@
                         Founder & Distribution Manager
                     </div>
 
-                    <p>Daniel Kambole, professionally known as Daniel JRN, is a Zambian entrepreneur and the Founder of Keysounds Entertainment Records LTD.</p>
-                    <p style="margin-top: 18px;">Having begun his journey as a musical artist and songwriter in 2019, Daniel developed a strong appreciation for music, creativity, and the opportunities within the entertainment industry. His growing passion for entrepreneurship inspired him to channel his musical background into building a business dedicated to supporting emerging talent.</p>
-                    <p style="margin-top: 18px;">Through Keysounds Entertainment Records LTD, Daniel aims to create meaningful opportunities for upcoming artists, promote artistic development, and establish a sustainable music business that contributes to the growth of Zambia's entertainment industry.</p>
+                     <p><strong>Daniel Kambole</strong>, professionally known as <strong>Daniel JRN</strong>, is a Zambian <strong>rapper, writer, and entrepreneur</strong>, and the <strong>Founder of Keysounds Entertainment Records LTD</strong>. His journey brings together music, thoughtful writing, and a growing passion for entrepreneurship, each reflecting a different side of his creativity and ambition.</p>
+                     <p style="margin-top: 18px;">Born on <strong>March 31, 2002, in Matero, Lusaka, Zambia</strong>, Daniel began his musical journey in <strong>2019</strong> as a rapper and songwriter. Music became his first major form of creative expression, giving him a way to share his thoughts, emotions, experiences, and stories.</p>
+                     <p style="margin-top: 18px;">In <strong>2020</strong>, he recorded his first studio track, <strong>“Missing You,”</strong> marking an important milestone in his development as an artist. He later released his debut EP, <strong><em>#EmotionalStress</em></strong>, featuring <strong>“Emotional Thunder,” “From The First Sight,” “Over You,” “Every day,”</strong> and <strong>“Game Over.”</strong> His musical work explores emotion and personal storytelling, with influences including <strong>XXXTentacion, Kendrick Lamar, J. Cole</strong>, and Zambia’s <strong>Zone Fam</strong>.</p>
                     <p style="margin-top: 18px;"><a href="https://danieljrn.github.io/my-discoveries/#biography">Read Full Biography ↗</a></p>
 
                     <div class="team-socials">
@@ -1787,6 +1812,9 @@
         </div>
 
     </section>
+
+
+
 
 
     <!-- =====================================================
@@ -2029,6 +2057,8 @@ For Inquiries: +260777289618
                 <a href="#team">Team</a>
 
                 <a href="#artists">Artists</a>
+
+                <a href="music-store.html">Music Store</a>
 
                 <a href="#contact">Contact</a>
 
