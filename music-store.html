@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Store | Keysounds Entertainment Records</title>
+<meta name="description" content="Explore music releases, digital albums and physical CDs from Keysounds Entertainment Records.">
+<style>
+
+        /* =====================================================
+           GENERAL SETTINGS
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080a10;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        :root {
+            --gold: #f5b52c;
+            --gold-light: #ffd86b;
+            --dark: #080a10;
+            --dark-two: #0d1017;
+            --dark-three: #121620;
+            --text: #ffffff;
+            --muted: #a9adb7;
+            --border: rgba(255, 255, 255, 0.10);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(5, 7, 12, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo .key {
+            color: #ffffff;
+        }
+
+        .logo .sounds {
+            color: var(--gold);
+        }
+
+        .logo small {
+            display: block;
+            color: #777;
+            font-size: 8px;
+            letter-spacing: 3px;
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #c3c3c3;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO / HOME
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 130px 7% 90px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(245, 181, 44, 0.09),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at center,
+                    #171c28 0%,
+                    #0b0e15 50%,
+                    #05070b 100%
+                );
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero-small {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 96px);
+            line-height: 0.93;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero h1 .records {
+            display: block;
+            color: #bfc2ca;
+            font-size: 0.48em;
+            letter-spacing: 6px;
+            margin-top: 18px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 38px;
+            color: #b3b7c0;
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 27px;
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: #080808;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #ffffff;
+            border-color: #444a55;
+        }
+
+        .button.secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+
+
+        /* =====================================================
+           STUDIO FEATURE
+        ===================================================== */
+
+        .studio-feature {
+            position: relative;
+            width: 100%;
+            height: 650px;
+            padding: 0;
+            overflow: hidden;
+            background: #05070b;
+        }
+
+        .studio-feature img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .studio-feature::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(5, 7, 11, 0.20),
+                    rgba(5, 7, 11, 0.45)
+                );
+        }
+
+        .studio-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 65px 7%;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5, 7, 11, 0.92) 0%,
+                    rgba(5, 7, 11, 0.25) 48%,
+                    transparent 75%
+                );
+        }
+
+        .studio-feature-content {
+            max-width: 800px;
+        }
+
+        .studio-feature-content span {
+            display: block;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 13px;
+        }
+
+        .studio-feature-content h2 {
+            font-size: clamp(38px, 6vw, 70px);
+            line-height: 1.02;
+            max-width: 750px;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 105px 7%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 13px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(35px, 5vw, 58px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background: var(--dark-two);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: #b8bbc3;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .about-highlight {
+            border-left: 3px solid var(--gold);
+            padding: 10px 0 10px 30px;
+        }
+
+        .about-highlight h3 {
+            font-size: 31px;
+            margin-bottom: 15px;
+        }
+
+        .about-highlight p {
+            color: #9fa3ac;
+        }
+
+
+        /* =====================================================
+           VISION & MISSION
+        ===================================================== */
+
+        .vision-section {
+            background: #080a10;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .vision-card {
+            padding: 48px;
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #11151e,
+                    #0b0e14
+                );
+
+            transition: 0.35s;
+        }
+
+        .vision-card:hover {
+            border-color: rgba(245, 181, 44, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .vision-card h3 {
+            color: var(--gold);
+            font-size: 29px;
+            margin-bottom: 18px;
+        }
+
+        .vision-card p {
+            color: #a9adb6;
+        }
+
+
+        /* =====================================================
+           PHILOSOPHY
+        ===================================================== */
+
+        .philosophy {
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(245, 181, 44, 0.08),
+                    transparent 45%
+                ),
+
+                #11151d;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .philosophy h2 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .philosophy h2 span {
+            color: var(--gold);
+        }
+
+        .philosophy p {
+            color: #b5b8c0;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+
+        /* =====================================================
+           VALUES
+        ===================================================== */
+
+        .values {
+            background: #080a10;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            border: 1px solid var(--border);
+            padding: 33px;
+            background: #0d1017;
+            transition: 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: rgba(245, 181, 44, 0.45);
+            transform: translateY(-4px);
+        }
+
+        .value-number {
+            font-size: 13px;
+            color: var(--gold);
+            margin-bottom: 22px;
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: #999ea8;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           TEAM
+        ===================================================== */
+
+        .team {
+            background: #10131a;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .team-card {
+            border: 1px solid var(--border);
+            background: #090b10;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .team-card:hover {
+            border-color: rgba(245, 181, 44, 0.45);
+            transform: translateY(-4px);
+        }
+
+        .team-photo {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: #0c0f15;
+        }
+
+        .team-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5, 7, 11, 0.30),
+                    transparent 30%
+                );
+
+            pointer-events: none;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .daniel-photo img {
+            object-position: center 25%;
+        }
+
+        .blessing-photo img {
+            object-position: center 25%;
+        }
+
+        .team-card:hover .team-photo img {
+            transform: scale(1.025);
+        }
+
+        .team-info {
+            padding: 30px;
+        }
+
+        .team-info h3 {
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: var(--gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .team-info p {
+            color: #a6aab3;
+            font-size: 15px;
+        }
+
+        /* TEAM SOCIAL LINKS */
+
+        .team-socials {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 23px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .team-socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            border: 1px solid #292e38;
+            color: #b7bbc4;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .team-socials a:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .social-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            background: #080a10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            padding: 36px;
+            border: 1px solid var(--border);
+            background: #0c0f15;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            border-color: rgba(245, 181, 44, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .service h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .service h3::before {
+            content: "—";
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        .service p {
+            color: #999ea8;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           ARTISTS
+        ===================================================== */
+
+        .artists {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(245, 181, 44, 0.08),
+                    transparent 40%
+                ),
+
+                #10131a;
+
+            text-align: center;
+        }
+
+        .artists-message {
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .artists-message h2 {
+            font-size: clamp(37px, 6vw, 63px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .artists-message p {
+            color: #a7abb4;
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            background: #080a10;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-text p {
+            color: #a9adb6;
+            margin-bottom: 25px;
+        }
+
+        .contact-note {
+            padding: 22px;
+            border-left: 3px solid var(--gold);
+            background: #0d1017;
+            color: #aaaeb7;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+
+        .contact-list strong {
+            display: block;
+            color: var(--gold);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .contact-list span {
+            color: #d0d2d7;
+        }
+
+        .official-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 11px;
+        }
+
+        .official-socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            border: 1px solid #292e38;
+
+            padding: 9px 13px;
+
+            color: #d0d2d7;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .official-socials a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #040509;
+            border-top: 1px solid var(--border);
+            padding: 50px 7% 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 8px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            color: #737781;
+            font-size: 14px;
+        }
+
+        .footer-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 17px;
+        }
+
+        .footer-socials a {
+            color: #888d96;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888d96;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            border-top: 1px solid var(--border);
+            padding-top: 22px;
+            color: #5e626b;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           TABLETS
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-photo {
+                height: 450px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 78px 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero h1 .records {
+                letter-spacing: 3px;
+            }
+
+            .studio-feature {
+                height: 500px;
+                padding: 0;
+            }
+
+            .studio-overlay {
+                padding: 45px 5%;
+            }
+
+            .studio-feature-content span {
+                letter-spacing: 3px;
+            }
+
+            .about-grid,
+            .vision-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .values-grid,
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-card {
+                padding: 32px;
+            }
+
+            .team-photo {
+                height: 520px;
+            }
+        }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            .hero-small {
+                letter-spacing: 4px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .studio-feature {
+                height: 420px;
+            }
+
+            .studio-overlay {
+                padding: 35px 5%;
+            }
+
+            .studio-feature-content h2 {
+                font-size: 38px;
+            }
+
+            .team-photo {
+                height: 450px;
+            }
+
+            .team-socials {
+                flex-direction: column;
+            }
+
+            .team-socials a {
+                justify-content: center;
+            }
+        }
+
+
+        /* MUSIC STORE — additions preserve existing website styles */
+        .music-store { background:linear-gradient(160deg,#10141e,#080a10 70%); }
+        .store-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:start;}
+        .store-player {border:1px solid var(--border);padding:16px;background:#151923;border-radius:14px;}
+        .store-player iframe {width:100%;border:0;border-radius:10px;display:block;min-height:352px;}
+        .store-details {border:1px solid var(--border);padding:32px;background:#0d1017;border-radius:14px;}
+        .store-tag {color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;}
+        .store-details h3 {font-size:clamp(28px,4vw,42px);line-height:1.15;margin:12px 0;}
+        .store-details p {color:#b8bbc3;margin-bottom:22px;}
+        .store-options {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0;}
+        .store-option {border:1px solid #373b44;border-radius:9px;padding:17px;background:#141822;}
+        .store-option strong {display:block;color:#fff;margin-bottom:6px;}
+        .store-option span {font-size:13px;color:#a9adb7;}
+        .store-soon {display:inline-block;padding:13px 22px;background:#303037;color:#f0d38c;border:1px solid #65552f;border-radius:6px;font-size:13px;font-weight:700;cursor:not-allowed;}
+        .store-payment {margin-top:24px;padding-top:18px;border-top:1px solid var(--border);font-size:13px;color:#a9adb7;}
+        .store-note {margin-top:22px;color:#a9adb7;font-size:14px;}
+        .store-details a.store-stream {display:inline-block;margin-left:14px;color:var(--gold);font-size:14px;text-decoration:underline;text-underline-offset:4px;}
+        .team-info strong {color:#eceef3;}
+        @media(max-width:800px){.store-layout{grid-template-columns:1fr;}.store-details{padding:24px;}}
+        @media(max-width:480px){.store-options{grid-template-columns:1fr;}.store-details a.store-stream{display:block;margin:18px 0 0;}}
+
+    
+.store-page-header {padding:140px 7% 42px;background:radial-gradient(circle at top,rgba(245,181,44,.12),transparent 65%),#0b0e15;}
+.store-page-header h1 {font-size:clamp(38px,6vw,68px);line-height:1.08;margin:12px 0;}
+.store-page-header p {color:#a9adb7;max-width:640px;}
+.store-back {color:var(--gold);font-size:14px;font-weight:700;}
+.store-page-header + .music-store {padding-top:45px;}
+@media(max-width:800px){.store-page-header{padding:115px 5% 35px;}.store-page-header + .music-store{padding-top:35px;}}
+/* Original album artwork in the separate Music Store */
+        .store-player .original-album-cover { display:block; width:100%; height:auto; object-fit:contain; border-radius:8px; margin-bottom:18px; }
+        </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo"><span class="key">KEY</span><span class="sounds">SOUNDS</span><small>ENTERTAINMENT RECORDS</small></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#artists">Artists</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav>
+<header class="store-page-header"><a class="store-back" href="index.html">← Back to Keysounds Home</a><h1>Music <span style="color:var(--gold)">Store.</span></h1><p>Discover releases from Keysounds artists. Explore the music now; purchasing options are coming soon.</p></header>
+<section class="music-store" id="music-store">
+        <div class="section-heading">
+            <div class="section-label">Keysounds Music Store</div>
+            <h2>Own the music. Support the artists.</h2>
+            <p>Explore releases from Keysounds Entertainment Records. Digital albums and physical CDs will be available to purchase here once checkout launches.</p>
+        </div>
+        <div class="store-layout">
+            <div class="store-player">
+                <img class="original-album-cover" src="emotional stress.jpg" alt="Original Emotional Stress album cover by Daniel JRN" loading="lazy">
+                <iframe title="Listen to Emotional Stress Deluxe by Daniel JRN on Spotify" src="https://open.spotify.com/embed/album/1l5xco1VECudL8gIdqf1zD?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div class="store-details">
+                <div class="store-tag">Featured Release • Daniel JRN</div>
+                <h3>Emotional Stress (Deluxe)</h3>
+                <p>Discover the deluxe release by Daniel JRN. Listen on Spotify now, or explore the upcoming purchase options below.</p>
+                <div class="store-options">
+                    <div class="store-option"><strong>Digital Album</strong><span>Downloadable music • Price to be announced</span></div>
+                    <div class="store-option"><strong>Physical CD</strong><span>Delivery or collection • Price to be announced</span></div>
+                </div>
+                <span class="store-soon" aria-label="Purchases coming soon">Purchases Coming Soon</span>
+                <a class="store-stream" href="https://open.spotify.com/album/1l5xco1VECudL8gIdqf1zD" target="_blank" rel="noopener noreferrer">Listen on Spotify ↗</a>
+                <div class="store-payment"><strong style="color:#fff">Planned payment options</strong><br>Visa / Mastercard · MTN Money · Airtel Money · Bank transfer · Google Pay (subject to provider support)</div>
+            </div>
+        </div>
+        <p class="store-note">Online checkout is not yet enabled. No payments are collected on this page. Physical CD availability and delivery details will be confirmed before sales begin.</p>
+    </section>
+<footer><div class="footer-top"><div class="footer-brand"><h3>KEY<span>SOUNDS</span> ENTERTAINMENT RECORDS</h3><p>Empowering Talent. Elevating Dreams.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="index.html#team">Team</a><a href="index.html#artists">Artists</a><a href="index.html#contact">Contact</a></div></div><div class="copyright">© 2026 Keysounds Entertainment Records. All rights reserved.</div></footer>
+</body></html>
