@@ -805,6 +805,33 @@
         }
 
 
+        .artist-card {
+            width: min(100%, 360px);
+            margin: 0 auto 32px;
+        }
+
+        .artist-card .artist-photo {
+            display: grid;
+            place-items: center;
+            height: auto;
+            aspect-ratio: 1;
+            background: radial-gradient(circle, #282116, #0c0f15 72%);
+        }
+
+        .artist-photo span {
+            color: var(--gold);
+            font-size: 64px;
+        }
+
+        .artist-photo img {
+            position: absolute;
+            inset: 0;
+        }
+
+        .artist-card .team-role {
+            margin-bottom: 0;
+        }
+
         /* =====================================================
            CONTACT
         ===================================================== */
@@ -1579,9 +1606,9 @@
                         Founder & Distribution Manager
                     </div>
 
-                     <p><strong>Daniel Kambole</strong>, professionally known as <strong>Daniel JRN</strong>, is a Zambian <strong>rapper, writer, and entrepreneur</strong>, and the <strong>Founder of Keysounds Entertainment Records LTD</strong>. His journey brings together music, thoughtful writing, and a growing passion for entrepreneurship, each reflecting a different side of his creativity and ambition.</p>
-                     <p style="margin-top: 18px;">Born on <strong>March 31, 2002, in Matero, Lusaka, Zambia</strong>, Daniel began his musical journey in <strong>2019</strong> as a rapper and songwriter. Music became his first major form of creative expression, giving him a way to share his thoughts, emotions, experiences, and stories.</p>
-                     <p style="margin-top: 18px;">In <strong>2020</strong>, he recorded his first studio track, <strong>“Missing You,”</strong> marking an important milestone in his development as an artist. He later released his debut EP, <strong><em>#EmotionalStress</em></strong>, featuring <strong>“Emotional Thunder,” “From The First Sight,” “Over You,” “Every day,”</strong> and <strong>“Game Over.”</strong> His musical work explores emotion and personal storytelling, with influences including <strong>XXXTentacion, Kendrick Lamar, J. Cole</strong>, and Zambia’s <strong>Zone Fam</strong>.</p>
+                    <p><strong>Daniel Kambole</strong>, professionally known as <strong>Daniel JRN</strong>, is a Zambian rapper and the founder of <strong>Keysounds Entertainment Records LTD</strong>. Born on March 31, 2002, in Matero, Lusaka, Zambia, he began rapping and writing songs in 2019. Hip-hop gave him a way to put his emotions and experiences into words and share them through music.</p>
+                    <p style="margin-top: 18px;">In 2020, Daniel recorded his first studio track, <strong>“Missing You.”</strong> He later released his debut EP, <strong><em>#EmotionalStress</em></strong>, featuring “Emotional Thunder,” “From The First Sight,” “Over You,” “Every day,” and “Game Over.” His music draws on personal experiences, with influences ranging from XXXTentacion, Kendrick Lamar, Kanye West, J. Cole, and the Zone Fam.</p>
+                    <p style="margin-top: 18px;">Daniel founded <strong>Keysounds Entertainment Records LTD</strong> to help emerging Zambian artists develop their talent and bring their music to wider audiences. As founder and distribution manager, he brings his experience as an independent rapper to the label’s work, helping artists share their music and find opportunities to grow.</p>
                     <p style="margin-top: 18px;"><a href="https://danieljrn.github.io/my-discoveries/#biography">Read Full Biography ↗</a></p>
 
                     <div class="team-socials">
@@ -1740,22 +1767,21 @@
 
         <div class="artists-message">
 
-            <div class="section-label">
-                Our Artists
-            </div>
+            <h2>Our Artists</h2>
 
-            <h2>
-                The next voices are already here.
-            </h2>
+            <article class="team-card artist-card">
+                <div class="team-photo artist-photo">
+                    <span aria-hidden="true">♫</span>
+                    <!-- Place daniel-jrn-artist.jpg beside this HTML file to show the artist photo. -->
+                    <img src="daniel-jrn-artist.jpg" alt="Daniel JRN" loading="lazy"
+                         onerror="this.style.display='none'">
+                </div>
 
-            <p>
-
-                This space will showcase the artists of
-                Keysounds Entertainment Records — their
-                stories, music, projects and journeys.
-
-            </p>
-
+                <div class="team-info">
+                    <h3>Daniel JRN</h3>
+                    <div class="team-role">First Signed Artist</div>
+                </div>
+            </article>
 
             <a href="artist-submissions.html"
                class="button">
